@@ -12,9 +12,10 @@ export class ContactComponent implements AfterViewInit {
   @ViewChildren('rv') rvEls!: QueryList<ElementRef>;
 
   links = [
-    { icon: 'devicon-github-original',   label: 'GitHub',    href: 'https://github.com/davidrajcodes?tab=repositories',                              color: '#ede9fe' },
-    { icon: 'devicon-linkedin-plain',     label: 'LinkedIn',  href: 'https://linkedin.com/in/david-raj', color:'#0a66c2' },
-    { icon: '',                           label: 'Email',     href: 'mailto:davidraj.i@outlook.com',  color: '#c084fc', isEmail: true },
+    { icon: 'devicon-github-original', label: 'GitHub', href: 'https://github.com/davidrajcodes?tab=repositories', color: '#ede9fe' },
+    { icon: 'devicon-linkedin-plain', label: 'LinkedIn', href: 'https://linkedin.com/in/david-raj', color: '#0a66c2' },
+    { icon: '', label: 'Email', href: 'mailto:davidraj.i@outlook.com', color: '#c084fc', isEmail: true },
+    { icon: '', label: 'Download Resume', href: 'assets/resume/David_Raj_Frontend_Angular_Developer.pdf', color: '#22d3ee', isResume: true },
   ];
 
   ngAfterViewInit() {

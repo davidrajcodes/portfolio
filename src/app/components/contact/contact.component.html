@@ -29,17 +29,20 @@
 
         <div class="social-row reveal" #rv style="transition-delay:.15s">
           @for (link of links; track link.label) {
-            <a [href]="link.href" class="social-link" [title]="link.label"
-               [target]="link.href.startsWith('http') ? '_blank' : '_self'">
-              @if (!link.isEmail) {
-                <i class="{{ link.icon }}" [style.color]="link.color"></i>
-              } @else {
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-              }
-              <span>{{ link.label }}</span>
-            </a>
+          <a [href]="link.href" class="social-link" [title]="link.label"
+            [attr.download]="link.isResume ? 'David_Raj_Resume.pdf' : null"
+            [attr.target]="link.isResume ? null : '_blank'"
+            [target]="link.href.startsWith('http') ? '_blank' : '_self'">
+            @if (!link.isEmail) {
+            <i class="{{ link.icon }}" [style.color]="link.color"></i>
+            } @else {
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            }
+            <span>{{ link.label }}</span>
+          </a>
           }
         </div>
 
