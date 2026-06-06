@@ -1,0 +1,67 @@
+.site-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  padding: 20px 0;
+  background: transparent;
+  transition: background .4s, padding .3s, border-color .4s;
+  border-bottom: 1px solid transparent;
+
+  &.scrolled {
+    background: rgba(6,4,15,.92);
+    backdrop-filter: blur(16px);
+    padding: 12px 0;
+    border-bottom-color: var(--border);
+  }
+}
+
+.nav-logo {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px; font-weight: 700;
+  color: var(--text); cursor: pointer;
+  text-decoration: none; letter-spacing: 1px;
+  .logo-bracket { color: var(--purple-lit); }
+  &:hover { color: var(--purple-glow); }
+}
+
+.nav-links {
+  display: flex; gap: 36px;
+  a {
+    font-size: 13px; letter-spacing: 1px; font-weight: 500;
+    color: var(--muted); cursor: pointer; text-decoration: none;
+    position: relative; transition: color .3s;
+    &::after {
+      content:''; position:absolute; bottom:-4px; left:0;
+      width:0; height:1px; background:var(--purple-lit);
+      transition: width .3s;
+    }
+    &:hover { color: var(--text); &::after { width:100%; } }
+  }
+}
+
+.hamburger {
+  background: none; border: none; cursor: pointer;
+  display: flex; flex-direction: column; gap: 5px; padding: 4px;
+  span {
+    display: block; width: 22px; height: 1px;
+    background: var(--muted);
+    transition: transform .3s, opacity .3s, background .3s;
+  }
+  &.open {
+    span:nth-child(1) { transform: rotate(45deg) translate(4px,4px); background: var(--purple-lit); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: rotate(-45deg) translate(4px,-4px); background: var(--purple-lit); }
+  }
+}
+
+.mobile-menu {
+  display: flex; flex-direction: column;
+  padding: 20px 24px;
+  background: rgba(11,8,24,.97);
+  border-top: 1px solid var(--border);
+  a {
+    padding: 14px 0; font-size: 15px; font-weight: 500;
+    color: var(--muted); cursor: pointer; text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: color .3s;
+    &:hover { color: var(--purple-glow); }
+  }
+}

@@ -1,0 +1,51 @@
+.contact-section { background:var(--bg-dark); position:relative; overflow:hidden; }
+
+.contact-orb {
+  position:absolute; width:600px;height:600px;
+  background:radial-gradient(circle, rgba(124,58,237,.2) 0%, transparent 70%);
+  border-radius:50%;
+  top:50%; left:50%; transform:translate(-50%,-50%);
+  pointer-events:none;
+}
+
+.section-eye { font-size:12px;letter-spacing:2px;color:var(--purple-lit);margin-bottom:12px;text-transform:uppercase; }
+
+.contact-title {
+  font-family:'Outfit',sans-serif;
+  font-size:clamp(32px,5vw,64px);
+  font-weight:800; letter-spacing:-2px; color:var(--text);
+}
+.contact-sub {
+  font-size:15px; line-height:1.8; color:var(--muted);
+  margin-bottom:36px;
+}
+.contact-email {
+  font-size:16px; color:var(--muted);
+  letter-spacing:1px;
+}
+
+.social-row {
+  display:flex; justify-content:center; gap:16px;
+  flex-wrap:wrap; margin-bottom:32px;
+}
+.social-link {
+  display:flex; align-items:center; gap:10px;
+  padding:12px 22px; border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--bg-card);
+  font-size:14px; font-weight:500;
+  color:var(--muted); text-decoration:none;
+  transition:border-color .3s, color .3s, transform .3s;
+
+  i { font-size:20px; }
+
+  &:hover {
+    border-color:var(--border-lit);
+    color:var(--purple-glow);
+    transform:translateY(-3px);
+  }
+}
+
+.contact-location {
+  font-size:12px; letter-spacing:1px; color:var(--muted); margin-top:16px;
+}

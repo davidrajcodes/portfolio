@@ -1,0 +1,54 @@
+<section class="section-pad exp-section" id="experience">
+  <div class="container-xl">
+
+    <div class="reveal" #rv>
+      <p class="section-eye mono">// work experience</p>
+      <h2 class="section-title">Work <span class="text-purple">Experience</span></h2>
+      <div class="glow-line mt-3 mb-5"></div>
+    </div>
+
+    <div class="exp-timeline">
+      @for (exp of experiences; track exp.title; let i = $index) {
+        <div class="exp-card reveal" #rv [style.transition-delay]="(i * 0.2) + 's'">
+
+          <!-- Left: meta -->
+          <div class="exp-meta">
+            <span class="exp-period mono">{{ exp.period }}</span>
+            @if (exp.current) {
+              <span class="exp-badge-current">● Live</span>
+            }
+            <div class="exp-company-loc">
+              <span class="exp-company">{{ exp.company }}</span>
+              <span class="exp-loc">📍 {{ exp.location }}</span>
+            </div>
+          </div>
+
+          <!-- Right: content -->
+          <div class="exp-content">
+            <div class="exp-dot-line">
+              <div class="exp-dot" [class.current]="exp.current"></div>
+              @if (i < experiences.length - 1) {
+                <div class="exp-line"></div>
+              }
+            </div>
+            <div class="exp-body">
+              <h3 class="exp-title">{{ exp.title }}</h3>
+              <ul class="exp-bullets">
+                @for (b of exp.bullets; track b) {
+                  <li>{{ b }}</li>
+                }
+              </ul>
+              <div class="exp-tags mt-3">
+                @for (tag of exp.tags; track tag) {
+                  <span class="pill">{{ tag }}</span>
+                }
+              </div>
+            </div>
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

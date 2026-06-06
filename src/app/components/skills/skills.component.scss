@@ -1,0 +1,137 @@
+.skills-section {
+  background: var(--bg-deep);
+}
+
+.section-eye {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--purple-lit);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.skills-sub {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 64px;
+}
+
+.categories-wrap {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+// .cat-block {
+//   background:var(--bg-card);
+//   border:1px solid var(--border);
+//   border-radius:16px;
+//   padding:28px;
+//   transition:border-color .3s, transform .3s;
+//   &:hover { border-color:var(--border-lit); transform:translateY(-3px); }
+// }
+
+.cat-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  transition: border-color .3s, transform .3s;
+
+  // Frontend (8 chips) → full width row
+  &:nth-child(1) {
+    grid-column: span 3;
+  }
+
+  // State & Reactivity (4 chips) → half width
+  &:nth-child(2) {
+    grid-column: span 3;
+  }
+
+  // Testing (6 chips) → half width  
+  &:nth-child(5) {
+    grid-column: span 2;
+  }
+
+  // Backend, Tools → each one-third
+  &:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  &:nth-child(4) {
+    grid-column: span 2;
+  }
+
+
+  &:hover {
+    border-color: var(--border-lit);
+    transform: translateY(-3px);
+  }
+}
+
+.cat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cat-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cat-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(124, 58, 237, .08);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--text);
+  font-weight: 500;
+  transition: border-color .25s, background .25s, transform .25s;
+  cursor: default;
+
+  i {
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    border-color: var(--border-lit);
+    background: rgba(124, 58, 237, .16);
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width:767px) {
+  .categories-wrap {
+    grid-template-columns: 1fr;
+  }
+}

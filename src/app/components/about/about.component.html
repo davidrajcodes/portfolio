@@ -1,0 +1,61 @@
+<section class="section-pad about-section" id="about">
+  <div class="container-xl">
+
+    <div class="row align-items-center g-5">
+
+      <!-- Left -->
+      <div class="col-lg-5">
+        <div class="reveal" #rv>
+          <p class="section-eye mono">// about me</p>
+          <h2 class="section-title">
+            I'm a <span class="text-purple">Software Engineer</span>
+            <span class="cursor-blink text-purple">|</span>
+          </h2>
+          <div class="glow-line my-4"></div>
+          <p class="about-sub">
+            Currently a Software Engineer at
+            <strong class="text-purple">iHxCloud Pvt. Ltd</strong>, Bangalore.
+          </p>
+          <p class="about-body">
+            Angular Developer with 3+ years specializing in the Angular (v15–v20) ecosystem.
+            I build high-performance, reactive UIs using RxJS, Angular Signals, and
+            component-driven architecture. I bridge the frontend–backend gap with working
+            knowledge of Java Spring Boot, Hibernate/JPA, and relational databases.
+          </p>
+          <p class="about-body">
+            Promoted to Software Engineer within 2 years. Mentored 2 junior engineers
+            through Angular certification. Recognized by MOPH Qatar for on-time delivery
+            during critical national demo phases.
+          </p>
+
+          <div class="d-flex gap-3 mt-4">
+            <div class="edu-badge">
+              <span class="edu-label">🎓 B.Sc. CS</span>
+              <span class="edu-sub">Nazareth Margoschis College · 91.3%</span>
+            </div>
+            <div class="cert-badge">
+              <span class="cert-label">✅ HackerRank</span>
+              <span class="cert-sub">Angular Intermediate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: highlights -->
+      <div class="col-lg-7">
+        <div class="row g-3">
+          @for (h of highlights; track h.title; let i = $index) {
+            <div class="col-sm-6">
+              <div class="highlight-card reveal" #rv [style.transition-delay]="(i * 0.12) + 's'">
+                <div class="hi-icon">{{ h.icon }}</div>
+                <h4 class="hi-title">{{ h.title }}</h4>
+                <p class="hi-desc">{{ h.desc }}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

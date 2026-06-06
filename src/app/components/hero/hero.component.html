@@ -1,0 +1,83 @@
+<section class="hero-section" id="home">
+
+  <!-- Background orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="grid-bg"></div>
+
+  <div class="container-xl">
+    <div class="row align-items-center min-vh-100">
+
+      <!-- Left: text -->
+      <div class="col-lg-7 hero-text-col">
+        <p class="hello mono">👋 Hello! I am <span class="text-purple">David Raj</span></p>
+
+        <h1 class="hero-heading">
+          An <span class="text-muted-p">Engineer</span> who<br>
+          crafts scalable<br>
+          <span class="text-purple">Angular</span> apps.
+        </h1>
+
+        <div class="typed-row mono">
+          <span class="typed-label">Currently working as →</span>
+          <span class="typed-word">{{ typedText() }}</span><span class="cursor" [class.hide]="!showCursor()">|</span>
+        </div>
+
+        <p class="hero-sub">
+          3+ years building high-performance, reactive user interfaces.
+          Delivered a national healthcare platform for <strong>50K+ users</strong> during
+          a 7-month international deployment in Qatar.
+        </p>
+
+        <div class="hero-actions d-flex flex-wrap gap-3">
+          <a class="btn-glow" (click)="scrollTo('projects')">View Projects →</a>
+          <a class="btn-ghost" (click)="scrollTo('contact')">Get in Touch</a>
+        </div>
+      </div>
+
+      <!-- Right: avatar card -->
+      <div class="col-lg-5 d-flex justify-content-center mt-5 mt-lg-0">
+        <div class="avatar-card">
+          <div class="avatar-glow"></div>
+          <div class="avatar-inner">
+            <!-- SVG Avatar placeholder (angular dev) -->
+            <div class="avatar-emoji">🧑‍💻</div>
+            <div class="orbit orbit-1">
+              <div class="orbit-dot" style="background:var(--purple-lit)"></div>
+            </div>
+            <div class="orbit orbit-2">
+              <div class="orbit-dot" style="background:var(--cyan)"></div>
+            </div>
+            <div class="orbit orbit-3">
+              <div class="orbit-dot" style="background:var(--pink)"></div>
+            </div>
+            <div class="floating-badge badge-ng">
+              <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="18" alt="Angular"> Angular 20
+            </div>
+            <div class="floating-badge badge-rx">
+              <span>RxJS</span>
+            </div>
+            <div class="floating-badge badge-ts">
+              <span>TS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats row -->
+    <div class="stats-row row g-3">
+      @for (s of stats; track s.val) {
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-val">{{ s.val }}</div>
+            <div class="stat-label mono">{{ s.label }}</div>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

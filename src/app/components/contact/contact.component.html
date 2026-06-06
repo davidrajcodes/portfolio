@@ -1,0 +1,53 @@
+<section class="section-pad contact-section" id="contact">
+
+  <div class="contact-orb"></div>
+
+  <div class="container-xl">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 text-center">
+
+        <div class="reveal" #rv>
+          <p class="section-eye mono">// get in touch</p>
+          <h2 class="contact-title">
+            Contact
+          </h2>
+          <div class="glow-line mx-auto mt-3 mb-4"></div>
+          <p class="contact-sub">
+            I'm currently looking to join a <span class="text-purple">cross-functional</span> team
+            that values improving people's lives through well-engineered products.
+            Have a project in mind? Let's connect.
+          </p>
+
+          <a href="mailto:davidraj.i@outlook.com" class="btn-glow mx-auto mb-5">
+            Say Hello →
+          </a>
+
+          <div class="contact-email mono mb-5">
+            davidraj.i&#64;outlook.com
+          </div>
+        </div>
+
+        <div class="social-row reveal" #rv style="transition-delay:.15s">
+          @for (link of links; track link.label) {
+            <a [href]="link.href" class="social-link" [title]="link.label"
+               [target]="link.href.startsWith('http') ? '_blank' : '_self'">
+              @if (!link.isEmail) {
+                <i class="{{ link.icon }}" [style.color]="link.color"></i>
+              } @else {
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              }
+              <span>{{ link.label }}</span>
+            </a>
+          }
+        </div>
+
+        <div class="contact-location mono reveal" #rv style="transition-delay:.3s">
+          📍 Bangalore, India · Open to new opportunities | Remote roles
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<section class="section-pad skills-section" id="skills">
+  <div class="container-xl">
+
+    <div class="text-center reveal" #rv>
+      <p class="section-eye mono">// tech stack</p>
+      <h2 class="section-title">
+        I'm currently looking to join a
+        <span class="text-purple">cross-functional</span> team
+      </h2>
+      <p class="skills-sub">that values improving product quality through well-engineered frontends</p>
+    </div>
+
+    <div class="categories-wrap">
+      @for (cat of categories; track cat.label; let ci = $index) {
+        <div class="cat-block reveal" #rv [style.transition-delay]="(ci * 0.15) + 's'">
+          <div class="cat-header">
+            <div class="cat-dot" [style.background]="cat.color"></div>
+            <span class="cat-label mono" [style.color]="cat.color">{{ cat.label }}</span>
+          </div>
+          <div class="tech-grid">
+            @for (tech of cat.techs; track tech.name) {
+              <div class="tech-chip" [title]="tech.name">
+                <i class="{{ tech.icon }} colored" [style.color]="tech.color"></i>
+                <span>{{ tech.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
