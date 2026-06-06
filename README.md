@@ -6,7 +6,7 @@ Frontend Developer | Angular | TypeScript | RxJS
 📄 [Download Resume](./assets/David_Raj_Frontend_Angular_Developer.pdf)
 
 ## Portfolio
-🌐 https://your-portfolio.com
+🌐 https://davidrajcodes.github.io/portfolio/
 
 ## LinkedIn
 🔗 https://linkedin.com/in/david-raj
